@@ -12,3 +12,35 @@ Quindi, il limite dei perimetri dei poligoni regolari inscritti nel cerchio di r
 
 '''
 
+
+import matplotlib.pyplot as plt
+import math
+
+def perimeter_of_regular_polygon(n, R):
+    # Calcola il lato del poligono regolare usando la formula "lato = 2 * R * sin(pi/n)"
+    side = 2 * R * math.sin(math.pi / n)
+    
+    # Calcola il perimetro del poligono regolare usando la formula "perimetro = n * lato"
+    perimeter = n * side
+    
+    return perimeter
+
+def main():
+    R = float(input("Inserisci il raggio del cerchio: "))
+    max_sides = int(input("Inserisci il numero massimo di lati del poligono (ad esempio, 1000): "))
+
+    n_values = range(3, max_sides + 1)
+    perimeters = [perimeter_of_regular_polygon(n, R) for n in n_values]
+
+    # Disegna il grafico del perimetro dei poligoni regolari in funzione del numero di lati
+    plt.plot(n_values, perimeters)
+    plt.axhline(2 * math.pi * R, color='r', linestyle='--', label='2πR (Circonferenza)')
+    plt.xlabel('Numero di lati (n)')
+    plt.ylabel('Perimetro')
+    plt.title(f"Perimetro dei poligoni regolari inscritti e circoscritti alla circonferenza di raggio R = {R}")
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+if __name__ == "__main__":
+    main()
