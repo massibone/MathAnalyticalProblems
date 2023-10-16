@@ -44,3 +44,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+'''
+verrà visualizzato un grafico che rappresenta come il perimetro dei poligoni regolari si avvicina progressivamente al valore di 2πR (il perimetro della circonferenza) al crescere di "n". Il grafico dimostra il concetto matematico del limite dei perimetri dei poligoni regolari quando il numero di lati tende a infinito.
+'''
