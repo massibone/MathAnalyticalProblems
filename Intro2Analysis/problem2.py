@@ -28,3 +28,25 @@ def riemann_sum(n):
         x_values.append(x)
         y_values.append(function(x))
     return sum, x_values, y_values
+def main():
+    n = int(input("Inserisci il numero di termini per la somma di Riemann (n): "))
+
+    approximation, x_values, y_values = riemann_sum(n)
+    print(f"L'approssimazione della somma con {n} termini di Riemann è: {approximation}")
+
+    # Disegna la curva y = e^-x * cos(pi*x)
+    plt.plot(x_values, y_values, label="y = e^(-x) * cos(πx)")
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title("Rappresentazione della curva y = e^(-x) * cos(πx)")
+    plt.legend()
+
+    # Disegna i rettangoli della somma di Riemann
+    plt.bar(x_values, y_values, width=1.0/n, alpha=0.5, align='edge', label="Rettangoli di Riemann")
+
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+if __name__ == "__main__":
+    main()
