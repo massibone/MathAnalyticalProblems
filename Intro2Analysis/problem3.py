@@ -17,3 +17,9 @@ def frazione_periodica_mista_to_frazione_ordinaria(parte_intera, parte_periodica
     frazione_ordinaria = numeratore / denominatore
     
     return frazione_ordinaria
+
+parte_intera = 0
+parte_periodica = "13555"  # Inserisci la parte periodica qui
+
+frazione_ordinaria = frazione_periodica_mista_to_frazione_ordinaria(parte_intera, parte_periodica)
+print("Frazione ordinaria:", frazione_ordinaria)
