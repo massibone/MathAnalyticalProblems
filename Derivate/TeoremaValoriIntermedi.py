@@ -23,3 +23,15 @@ valori_intermedi = np.linspace(valore_minimo, valore_massimo, 100)
 x = np.linspace(intervallo_inizio, intervallo_fine, 1000)
 y = funzione(x)
 plt.plot(x, y, label='f(x) = x^3 - 3x^2 + 2')
+
+# Plot dei valori intermedi
+plt.scatter([intervallo_inizio] * 100, valori_intermedi, c='red', marker='.')
+plt.scatter([intervallo_fine] * 100, valori_intermedi, c='red', marker='.')
+
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('Teorema dei Valori Intermedi')
+plt.legend()
+plt.grid(True)
+
+plt.show()
