@@ -12,3 +12,14 @@ def funzione(x):
 # Intervallo chiuso e limitato
 intervallo_inizio = -1
 intervallo_fine = 3
+# Calcolare il valore minimo e massimo della funzione nell'intervallo
+valore_minimo = min([funzione(x) for x in np.linspace(intervallo_inizio, intervallo_fine, 1000)])
+valore_massimo = max([funzione(x) for x in np.linspace(intervallo_inizio, intervallo_fine, 1000)])
+
+# Calcolare i valori intermedi tra il minimo e il massimo
+valori_intermedi = np.linspace(valore_minimo, valore_massimo, 100)
+
+# Plot della funzione
+x = np.linspace(intervallo_inizio, intervallo_fine, 1000)
+y = funzione(x)
+plt.plot(x, y, label='f(x) = x^3 - 3x^2 + 2')
