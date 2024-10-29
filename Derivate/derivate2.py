@@ -1,3 +1,6 @@
+'''
+Questo codice calcola la derivata della funzione radice cubica f(x) = ∛x e la valuta in x = 8.
+'''
 import sympy as sp
 
 # Definisci la variabile simbolica x
